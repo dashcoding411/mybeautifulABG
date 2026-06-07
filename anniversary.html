@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6 Months 💗 Clem</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Nunito:wght@300;400;600;700;800&family=Sacramento&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pk1:#FF6B9D; --pk2:#FF8DC7; --pk3:#FFB3D9;
+  --pk4:#FFD6EA; --pk5:#FFF0F7;
+  --deep:#E91E8C; --dark:#C2006F; --rose:#FF4785;
+  --text:#3D1A4E; --sub:#9B6B9E;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;background:var(--pk5);color:var(--text);overflow-x:hidden;cursor:none}
+
+/* ── CURSOR ── */
+#cur{position:fixed;pointer-events:none;z-index:10001;font-size:22px;
+  transform:translate(-50%,-50%);transition:transform .12s;will-change:left,top}
+.sparkle{position:fixed;pointer-events:none;font-size:16px;z-index:10000;
+  animation:spk .8s ease-out forwards}
+@keyframes spk{0%{opacity:1;transform:scale(0) rotate(0)}
+  60%{opacity:1;transform:scale(1.5) rotate(200deg)}
+  100%{opacity:0;transform:scale(0) rotate(360deg) translateY(-32px)}}
+
+/* ── PARTICLES ── */
+#prt{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.pt{position:absolute;animation:fup linear infinite;opacity:0}
+@keyframes fup{
+  0%  {transform:translateY(110vh) rotate(0deg) scale(.6);opacity:0}
+  10% {opacity:1}
+  90% {opacity:.7}
+  100%{transform:translateY(-80px) rotate(720deg) scale(1.3);opacity:0}}
+
+/* ── REVEAL ── */
+.rv,.rvl,.rvr{transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.rv {opacity:0;transform:translateY(55px)}
+.rvl{opacity:0;transform:translateX(-65px)}
+.rvr{opacity:0;transform:translateX(65px)}
+.rv.on,.rvl.on,.rvr.on{opacity:1;transform:none}
+
+/* ── NAV ── */
+#nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;
+  background:rgba(255,255,255,.78);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border:1px solid rgba(255,107,157,.3);border-radius:50px;padding:8px 22px;
+  display:flex;gap:18px;box-shadow:0 4px 24px rgba(233,30,140,.15)}
+#nav a{font-size:19px;text-decoration:none;transition:transform .2s;display:block}
+#nav a:hover{transform:scale(1.4) translateY(-3px)}
+
+/* ── SHARED ── */
+section{padding:100px 24px;position:relative;z-index:2}
+.wrap{max-width:1080px;margin:0 auto}
+.st{font-family:'Playfair Display',serif;font-size:clamp(30px,5.5vw,58px);
+  color:var(--deep);text-align:center;margin-bottom:10px}
+.ss{font-size:17px;color:var(--sub);text-align:center;margin-bottom:56px}
+.glass{background:rgba(255,255,255,.7);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border:1px solid rgba(255,107,157,.22);border-radius:24px;
+  box-shadow:0 8px 32px rgba(233,30,140,.09);padding:40px;
+  transition:transform .35s,box-shadow .35s}
+.glass:hover{transform:translateY(-7px);box-shadow:0 20px 52px rgba(233,30,140,.18)}
+
+/* ══════════ HERO ══════════ */
+#hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;text-align:center;padding:80px 24px;
+  background:linear-gradient(155deg,#FFECF6 0%,#FFD6EA 40%,#FFB3D9 75%,#FF8DC7 100%);
+  overflow:hidden}
+.hglow{position:absolute;width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,107,157,.28) 0%,transparent 70%);
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  animation:gp 5s ease-in-out infinite;pointer-events:none}
+@keyframes gp{0%,100%{opacity:.6;transform:translate(-50%,-50%) scale(1)}
+  50%{opacity:1;transform:translate(-50%,-50%) scale(1.18)}}
+.hm{font-family:'Sacramento',cursive;font-size:clamp(88px,22vw,200px);
+  color:var(--deep);text-shadow:0 6px 40px rgba(233,30,140,.25);line-height:1;
+  animation:hi 1.2s cubic-bezier(.16,1,.3,1) both}
+.hw{font-family:'Playfair Display',serif;font-style:italic;
+  font-size:clamp(18px,3.5vw,36px);color:var(--text);margin:4px 0 6px;
+  animation:hi 1.2s .25s cubic-bezier(.16,1,.3,1) both}
+.hn{font-family:'Sacramento',cursive;font-size:clamp(56px,11vw,115px);
+  color:var(--dark);animation:hi 1.2s .5s cubic-bezier(.16,1,.3,1) both;margin-bottom:26px}
+.hh{font-size:34px;letter-spacing:10px;animation:hi 1.2s .75s cubic-bezier(.16,1,.3,1) both}
+.hh span{display:inline-block;animation:hb 1.7s ease-in-out infinite}
+.hh span:nth-child(2){animation-delay:.22s}.hh span:nth-child(3){animation-delay:.44s}
+@keyframes hi{from{opacity:0;transform:scale(.85) translateY(30px)}to{opacity:1;transform:none}}
+@keyframes hb{0%,100%{transform:scale(1)}15%{transform:scale(1.22)}30%{transform:scale(1)}45%{transform:scale(1.12)}}
+.sarr{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);
+  font-size:26px;color:var(--deep);animation:bob 2s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-11px)}}
+
+/* ══════════ ABG ══════════ */
+#abg{background:linear-gradient(135deg,#FFF5FA,#FFECF5)}
+.abg-inner{max-width:800px;margin:0 auto;text-align:center}
+.badge{display:inline-flex;align-items:center;gap:8px;
+  background:linear-gradient(135deg,var(--deep),var(--rose));
+  color:#fff;font-weight:800;font-size:12px;letter-spacing:3px;text-transform:uppercase;
+  padding:8px 26px;border-radius:50px;margin-bottom:22px;
+  animation:bg 2.5s ease-in-out infinite}
+@keyframes bg{0%,100%{box-shadow:0 0 16px rgba(233,30,140,.4)}
+  50%{box-shadow:0 0 44px rgba(233,30,140,.85),0 0 64px rgba(233,30,140,.25)}}
+.abg-emojis{display:flex;gap:18px;justify-content:center;font-size:42px;margin:22px 0}
+.abg-emojis span{display:inline-block;animation:fb 2.5s ease-in-out infinite}
+.abg-emojis span:nth-child(2){animation-delay:.3s}.abg-emojis span:nth-child(3){animation-delay:.6s}
+.abg-emojis span:nth-child(4){animation-delay:.9s}.abg-emojis span:nth-child(5){animation-delay:1.2s}
+@keyframes fb{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-13px) rotate(4deg)}}
+.abg-text{font-family:'Playfair Display',serif;font-style:italic;
+  font-size:clamp(17px,2.8vw,23px);line-height:1.95;color:var(--text)}
+.hot{color:var(--deep);font-style:normal;font-weight:700}
+
+/* ══════════ DRINKS ══════════ */
+#drinks{background:linear-gradient(155deg,#FFF0FA,#FFE0F0,#FFD6EA)}
+.drinks-row{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:880px;margin:0 auto}
+@media(max-width:640px){.drinks-row{grid-template-columns:1fr}}
+.dcard{text-align:center}
+.dico{font-size:72px;display:block;margin-bottom:14px;
+  transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
+.dcard:hover .dico{transform:scale(1.15) rotate(9deg)}
+.dname{font-family:'Playfair Display',serif;font-size:26px;color:var(--deep);margin-bottom:3px}
+.dwho{font-family:'Sacramento',cursive;font-size:32px;color:var(--sub);margin-bottom:12px}
+.dbody{font-size:15px;line-height:1.8;color:var(--text)}
+.dlist{list-style:none;margin-top:12px}
+.dlist li{padding:6px 0;font-size:15px;border-bottom:1px solid rgba(255,107,157,.12)}
+.dlist li::before{content:'✨ '}
+.dfancy{background:linear-gradient(155deg,rgba(233,30,140,.07),rgba(255,107,157,.09));
+  border:2px solid rgba(255,107,157,.3)}
+.dbasic{background:rgba(255,255,255,.62);border:2px solid rgba(255,107,157,.15)}
+
+/* ══════════ POOL ══════════ */
+#pool{background:linear-gradient(135deg,#0b3618,#175e2c,#0b3618)}
+#pool .st{color:#FFD6EA}#pool .ss{color:rgba(255,214,234,.65)}
+.pool-wrap{display:flex;flex-direction:column;align-items:center;gap:38px}
+.ptable{width:480px;max-width:90vw;height:268px;
+  background:radial-gradient(ellipse at 40% 40%,#1e9652 0%,#126235 100%);
+  border-radius:22px;border:12px solid #7B4F2E;position:relative;
+  box-shadow:0 0 70px rgba(0,0,0,.55),inset 0 0 40px rgba(0,0,0,.15)}
+.pocket{position:absolute;width:22px;height:22px;background:#090909;
+  border-radius:50%;border:2px solid #444}
+.pocket.tl{top:-5px;left:-5px}.pocket.tr{top:-5px;right:-5px}
+.pocket.bl{bottom:-5px;left:-5px}.pocket.br{bottom:-5px;right:-5px}
+.pocket.ml{top:50%;left:-11px;transform:translateY(-50%)}
+.pocket.mr{top:50%;right:-11px;transform:translateY(-50%)}
+.pball{position:absolute;width:28px;height:28px;border-radius:50%;
+  box-shadow:inset -5px -3px 10px rgba(0,0,0,.35),2px 2px 8px rgba(0,0,0,.3);
+  transition:all .9s cubic-bezier(.34,1.56,.64,1)}
+.pcue{position:absolute;height:4px;
+  background:linear-gradient(90deg,#D4A96A,#A0743A);
+  border-radius:4px;transform-origin:left center;transition:all .8s}
+.dmeter{width:100%;max-width:480px}
+.dlbl{color:#FFD6EA;font-weight:700;font-size:17px;text-align:center;margin-bottom:14px}
+.srow{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.srow span{font-size:28px}
+input[type=range]{-webkit-appearance:none;width:100%;height:12px;border-radius:6px;
+  background:linear-gradient(90deg,var(--pk4),var(--deep));outline:none;cursor:pointer}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:32px;height:32px;
+  border-radius:50%;background:var(--pk1);border:3px solid #fff;
+  box-shadow:0 0 14px rgba(255,107,157,.55);cursor:pointer}
+.btrack{text-align:center;font-size:26px;letter-spacing:4px;margin-bottom:14px}
+.sbox{background:rgba(0,0,0,.42);border-radius:16px;padding:20px 26px;text-align:center}
+.sname{font-family:'Playfair Display',serif;font-size:24px;color:#fff;
+  margin-bottom:8px;transition:all .4s}
+.sdesc{font-size:13px;color:rgba(255,255,255,.72);font-style:italic;line-height:1.65}
+
+/* ══════════ CLASH ROYALE ══════════ */
+#clash{background:linear-gradient(155deg,#0e0220,#1e0550,#0e0220)}
+#clash .st{color:#FFD700;text-shadow:0 0 34px rgba(255,215,0,.5)}
+#clash .ss{color:rgba(220,180,255,.7)}
+.clash-row{display:flex;align-items:center;justify-content:center;gap:34px;
+  flex-wrap:wrap;margin-bottom:34px}
+.ccol{display:flex;flex-direction:column;align-items:center;gap:16px}
+.crcard{width:162px;height:218px;border-radius:16px;position:relative;cursor:pointer;
+  transition:transform .3s,box-shadow .4s;overflow:hidden;display:flex;flex-direction:column}
+.crcard:hover{transform:scale(1.08) rotate(-2deg)}
+.crb{background:linear-gradient(168deg,#0b2b6a,#1648aa);
+  border:3px solid #FFD700;box-shadow:0 0 28px rgba(255,215,0,.35),inset 0 0 28px rgba(255,215,0,.06)}
+.crw{background:linear-gradient(168deg,#38086a,#6415bc);
+  border:3px solid #C084FC;box-shadow:0 0 28px rgba(192,132,252,.45),inset 0 0 28px rgba(192,132,252,.06)}
+.cimg{flex:1;display:flex;align-items:center;justify-content:center;font-size:70px;padding:6px}
+.cimg img{max-width:118px;max-height:118px;object-fit:contain;
+  filter:drop-shadow(0 4px 14px rgba(0,0,0,.4))}
+.cbot{padding:6px 8px;border-top:1px solid rgba(255,255,255,.15);text-align:center}
+.cel{display:flex;align-items:center;justify-content:center;gap:4px;margin-bottom:4px}
+.epip{width:12px;height:12px;border-radius:50%;background:#a855f7}
+.enum{color:#c084fc;font-weight:900;font-size:15px}
+.cname{color:#fff;font-weight:800;font-size:12px;letter-spacing:1px;text-transform:uppercase}
+.cstats{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  border-radius:12px;padding:14px;min-width:128px}
+.cstats h5{color:#FFD700;font-size:10px;letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:10px;text-align:center}
+.srow2{display:flex;justify-content:space-between;
+  color:rgba(255,255,255,.8);font-size:13px;
+  padding:4px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.cvs{font-family:'Playfair Display',serif;font-size:50px;color:#FFD700;
+  text-shadow:0 0 28px rgba(255,215,0,.7);animation:gp 2s ease-in-out infinite}
+.bbtn{display:block;margin:0 auto 14px;padding:18px 62px;
+  background:linear-gradient(135deg,#FF7700,#FFAA00,#FFD700);
+  color:#1a0a00;font-family:'Nunito',sans-serif;font-weight:900;
+  font-size:20px;letter-spacing:2px;text-transform:uppercase;
+  border:none;border-radius:50px;cursor:pointer;
+  box-shadow:0 8px 32px rgba(255,170,0,.5);transition:all .3s}
+.bbtn:hover{transform:scale(1.07);box-shadow:0 14px 48px rgba(255,170,0,.72)}
+.bres{text-align:center;color:#fff;font-family:'Playfair Display',serif;
+  font-size:21px;min-height:60px;padding:14px 22px;
+  opacity:0;transition:opacity .5s}
+.bres.show{opacity:1}
+
+/* ══════════ CUP PONG ══════════ */
+#pong{background:linear-gradient(135deg,var(--pk5),var(--pk4))}
+.pwrap{max-width:600px;margin:0 auto;text-align:center}
+.phud{display:flex;justify-content:center;gap:44px;margin-bottom:18px;flex-wrap:wrap}
+.hstat{text-align:center}
+.hval{font-family:'Playfair Display',serif;font-size:38px;color:var(--deep);font-weight:700}
+.hlbl{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--sub)}
+.phint{font-size:14px;color:var(--sub);font-style:italic;margin-bottom:12px;min-height:20px}
+#pongcv{display:block;margin:0 auto;border-radius:18px;
+  box-shadow:0 14px 52px rgba(233,30,140,.26);cursor:none;max-width:100%}
+.pbtn{margin-top:18px;padding:12px 34px;
+  background:linear-gradient(135deg,var(--deep),var(--rose));
+  color:#fff;border:none;border-radius:50px;
+  font-family:'Nunito',sans-serif;font-weight:700;font-size:16px;cursor:pointer;
+  box-shadow:0 4px 20px rgba(233,30,140,.3);transition:all .3s}
+.pbtn:hover{transform:scale(1.07);box-shadow:0 8px 32px rgba(233,30,140,.52)}
+
+/* ══════════ DISTANCE ══════════ */
+#dist{background:linear-gradient(155deg,#FFE8F5,#FFD6EA,#FFBFDF);text-align:center}
+.bhrt{font-size:84px;display:block;margin:0 auto 28px;animation:hb 1.8s ease-in-out infinite}
+.dquote{font-family:'Playfair Display',serif;font-style:italic;
+  font-size:clamp(19px,3.2vw,32px);line-height:1.9;max-width:720px;
+  margin:0 auto 46px;color:var(--text)}
+.dquote em{color:var(--deep);font-style:normal;font-weight:700}
+.dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));
+  gap:22px;max-width:880px;margin:0 auto}
+.dcard2{text-align:left}
+.dico2{font-size:38px;margin-bottom:12px;display:block}
+.dcard2 h3{font-family:'Playfair Display',serif;font-size:21px;
+  color:var(--deep);margin-bottom:10px}
+.dcard2 p{font-size:15px;line-height:1.8;color:var(--text)}
+
+/* ══════════ FOOTER ══════════ */
+footer{background:linear-gradient(135deg,var(--deep),var(--dark),var(--rose));
+  padding:78px 24px;text-align:center;position:relative;z-index:2}
+.ftit{font-family:'Sacramento',cursive;font-size:clamp(52px,11vw,108px);
+  color:#fff;text-shadow:0 4px 24px rgba(0,0,0,.2);margin-bottom:12px}
+.fsub{font-family:'Playfair Display',serif;font-size:20px;
+  color:rgba(255,255,255,.86);font-style:italic;margin-bottom:28px}
+.fhrt{font-size:30px;letter-spacing:12px;animation:fb 2s infinite}
+</style>
+</head>
+<body>
+
+<div id="cur">💗</div>
+<div id="prt"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero"  title="Home">💗</a>
+  <a href="#abg"   title="My ABG">👑</a>
+  <a href="#drinks" title="Drinks">🍸</a>
+  <a href="#pool"  title="Pool">🎱</a>
+  <a href="#clash" title="Clash Royale">⚔️</a>
+  <a href="#pong"  title="Cup Pong">🏓</a>
+  <a href="#dist"  title="Us">💌</a>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="hglow"></div>
+  <div class="hm">6 Months</div>
+  <div class="hw">with the most beautiful girl in the world</div>
+  <div class="hn">♡ &nbsp;Clem&nbsp; ♡</div>
+  <div class="hh"><span>💗</span><span>💕</span><span>💗</span></div>
+  <div class="sarr">↓</div>
+</section>
+
+<!-- ══ ABG ══ -->
+<section id="abg">
+  <div class="wrap">
+    <div class="glass abg-inner rv">
+      <div class="badge">✨ Official Certification ✨</div>
+      <h2 class="st" style="color:var(--deep)">My Pretty ABG</h2>
+      <p class="ss" style="margin-bottom:0">A · B · G &nbsp;—&nbsp; Armenian Beautiful Girl</p>
+      <div class="abg-emojis">
+        <span>👑</span><span>💅</span><span>✨</span><span>💕</span><span>🌹</span>
+      </div>
+      <p class="abg-text">
+        In a world full of ordinary, you are completely extraordinary. My
+        <span class="hot">Armenian Beautiful Girl</span> — you walk into any room and the whole vibe
+        just <em>shifts</em>. You've got this effortless, magnetic glow that absolutely no filter
+        could ever capture. The truth is, <span class="hot">ABG</span> was an acronym waiting to be
+        claimed by exactly one person, and that person is <span class="hot">you</span>, Clem.
+        No one else fits it quite like you do. You're my pretty ABG and I am genuinely
+        the luckiest person alive.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DRINKS ══ -->
+<section id="drinks">
+  <div class="wrap">
+    <h2 class="st rv">Our Drink Orders 🍹</h2>
+    <p class="ss rv">A study in sophistication... and beer</p>
+    <div class="drinks-row">
+      <div class="glass dcard dfancy rvl">
+        <span class="dico">🍸</span>
+        <div class="dname">Clem's Bar Tab</div>
+        <div class="dwho">a whole experience</div>
+        <p class="dbody">She doesn't just order drinks. She orders <em>moments</em>.</p>
+        <ul class="dlist">
+          <li>Espresso Martini (extra espresso, obviously)</li>
+          <li>Classic Margarita (perfectly salted rim, no notes)</li>
+          <li>Cocktails with names I can barely pronounce</li>
+          <li>Something pink, probably garnished with a flower</li>
+          <li>A disapproving sip of my beer, purely for reference</li>
+        </ul>
+      </div>
+      <div class="glass dcard dbasic rvr">
+        <span class="dico">🍺</span>
+        <div class="dname">My Bar Tab</div>
+        <div class="dwho">just... beer</div>
+        <p class="dbody">
+          Any beer. All beer. <em>Just beer.</em><br><br>
+          Sorry baby 😅<br><br>
+          While Clem is getting a full sensory journey — the right glass, the garnish,
+          the perfectly balanced flavour profile — I'm standing next to her with
+          a beer. It's not fancy. It doesn't have a garnish.
+          But hey, at least one of us has good taste and it's definitely her.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ POOL ══ -->
+<section id="pool">
+  <div class="wrap">
+    <h2 class="st rv">Pool Sharks 🎱</h2>
+    <p class="ss rv">We are genuinely terrible. Unless...</p>
+    <div class="pool-wrap">
+      <div class="ptable" id="ptable">
+        <div class="pocket tl"></div><div class="pocket tr"></div>
+        <div class="pocket bl"></div><div class="pocket br"></div>
+        <div class="pocket ml"></div><div class="pocket mr"></div>
+      </div>
+      <div class="dmeter rv">
+        <div class="dlbl" id="dlbl">🍺 Drag to reveal our true skill level 🍺</div>
+        <div class="srow">
+          <span>😐</span>
+          <input type="range" id="dslider" min="0" max="6" value="0">
+          <span>🥴</span>
+        </div>
+        <div class="btrack" id="btrack">🤍🤍🤍🤍🤍🤍</div>
+        <div class="sbox">
+          <div class="sname" id="sname">Skill Level: 😔 Sober &amp; Suffering</div>
+          <div class="sdesc" id="sdesc">We miss every single shot and apologise to each other about it. Repeatedly. It's painful to watch.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CLASH ROYALE ══ -->
+<section id="clash">
+  <div class="wrap">
+    <h2 class="st rv">⚔️ Clash Chronicles ⚔️</h2>
+    <p class="ss rv">The eternal debate — click the cards, then hit BATTLE</p>
+    <div class="clash-row">
+      <!-- Bowler -->
+      <div class="ccol rvl">
+        <div class="crcard crb" id="crd-bowler" onclick="selectCR('bowler')">
+          <div class="cimg" id="bwrap">
+            <img src="https://cdn.royaleapi.com/static/img/cards-150/bowler.png"
+                 alt="Bowler" onerror="imgFail('bwrap','🎳')">
+          </div>
+          <div class="cbot">
+            <div class="cel"><div class="epip"></div><span class="enum">5</span></div>
+            <div class="cname">Bowler</div>
+          </div>
+        </div>
+        <div class="cstats">
+          <h5>Battle Stats</h5>
+          <div class="srow2"><span>HP</span><span style="color:#93C5FD">1,760</span></div>
+          <div class="srow2"><span>DPS</span><span style="color:#FCA5A5">153</span></div>
+          <div class="srow2"><span>Range</span><span style="color:#86EFAC">7 tiles</span></div>
+          <div class="srow2"><span>Speed</span><span style="color:#FDE68A">Slow</span></div>
+        </div>
+      </div>
+
+      <div class="cvs rv">VS</div>
+
+      <!-- Mother Witch -->
+      <div class="ccol rvr">
+        <div class="crcard crw" id="crd-witch" onclick="selectCR('witch')">
+          <div class="cimg" id="wwrap">
+            <img src="https://cdn.royaleapi.com/static/img/cards-150/mother-witch.png"
+                 alt="Mother Witch" onerror="imgFail('wwrap','🧙‍♀️')">
+          </div>
+          <div class="cbot">
+            <div class="cel"><div class="epip"></div><span class="enum">5</span></div>
+            <div class="cname">Mother Witch</div>
+          </div>
+        </div>
+        <div class="cstats">
+          <h5>Battle Stats</h5>
+          <div class="srow2"><span>HP</span><span style="color:#93C5FD">736</span></div>
+          <div class="srow2"><span>DPS</span><span style="color:#FCA5A5">133</span></div>
+          <div class="srow2"><span>Range</span><span style="color:#86EFAC">5.5 tiles</span></div>
+          <div class="srow2"><span>Speed</span><span style="color:#FDE68A">Medium</span></div>
+        </div>
+      </div>
+    </div>
+    <button class="bbtn" onclick="doBattle()">⚔️ BATTLE! ⚔️</button>
+    <div class="bres" id="bres"></div>
+  </div>
+</section>
+
+<!-- ══ CUP PONG ══ -->
+<section id="pong">
+  <div class="wrap">
+    <h2 class="st rv">🏓 Mini Cup Pong</h2>
+    <p class="ss rv">Click to aim &amp; shoot — drunk mode activates after 3 cups!</p>
+    <div class="pwrap">
+      <div class="phud">
+        <div class="hstat"><div class="hval" id="hsunk">0</div><div class="hlbl">Cups Sunk</div></div>
+        <div class="hstat"><div class="hval" id="hshots">0</div><div class="hlbl">Shots Taken</div></div>
+        <div class="hstat"><div class="hval" id="hstatus">😐</div><div class="hlbl">Status</div></div>
+      </div>
+      <p class="phint" id="phint">Click anywhere on the table to aim and shoot!</p>
+      <canvas id="pongcv" width="560" height="380"></canvas>
+      <button class="pbtn" onclick="resetPong()">🔄 New Game</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DISTANCE ══ -->
+<section id="dist">
+  <div class="wrap">
+    <span class="bhrt">💗</span>
+    <h2 class="st rv">Worth Every Mile</h2>
+    <p class="dquote rv">
+      "I know long distance is hard...<br>
+      but it's harder with you because
+      <em>I miss you so much every single day.</em><br>
+      Seeing you is always the best part of my week."
+    </p>
+    <div class="dgrid">
+      <div class="glass dcard2 rvl">
+        <span class="dico2">🌙</span>
+        <h3>Every Night</h3>
+        <p>Every night feels a little longer without you nearby. But then you pop up on my screen and suddenly everything's okay again. You have that effect on me.</p>
+      </div>
+      <div class="glass dcard2 rv">
+        <span class="dico2">📱</span>
+        <h3>Rent Free</h3>
+        <p>I see something funny and immediately want to show you. I hear a song and think of you. You've taken up permanent, totally rent-free residence in my head — and I wouldn't change it for anything.</p>
+      </div>
+      <div class="glass dcard2 rvr">
+        <span class="dico2">✈️</span>
+        <h3>Worth Every Wait</h3>
+        <p>The countdown to seeing you is the best part of my week. Because I know every single second with you is going to be absolutely perfect. It always is.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="ftit">I love you, Clem</div>
+  <div class="fsub">Six months down, forever to go 💗</div>
+  <div class="fhrt">💗 &nbsp;💕 &nbsp;💗 &nbsp;💕 &nbsp;💗</div>
+</footer>
+
+<script>
+// ════════════════════════════════
+// CUSTOM CURSOR
+// ════════════════════════════════
+const cur = document.getElementById('cur');
+document.addEventListener('mousemove', e => {
+  cur.style.left = e.clientX + 'px';
+  cur.style.top  = e.clientY + 'px';
+});
+document.addEventListener('mousedown', () => cur.style.transform = 'translate(-50%,-50%) scale(1.5)');
+document.addEventListener('mouseup',   () => cur.style.transform = 'translate(-50%,-50%) scale(1)');
+document.addEventListener('click', e => {
+  for (let i = 0; i < 6; i++) spk(
+    e.clientX + (Math.random()-.5)*44,
+    e.clientY + (Math.random()-.5)*44
+  );
+});
+function spk(x, y) {
+  const s = document.createElement('div');
+  s.className = 'sparkle';
+  s.textContent = ['✨','💗','💕','⭐','🌸','💖'][Math.floor(Math.random()*6)];
+  s.style.cssText = `left:${x}px;top:${y}px`;
+  document.body.appendChild(s);
+  setTimeout(() => s.remove(), 900);
+}
+// Hide cursor over pong canvas
+const pongcv = document.getElementById('pongcv');
+pongcv.addEventListener('mouseenter', () => cur.style.opacity='0');
+pongcv.addEventListener('mouseleave', () => cur.style.opacity='1');
+
+// ════════════════════════════════
+// FLOATING PARTICLES
+// ════════════════════════════════
+const prt = document.getElementById('prt');
+const PE  = ['💗','💕','✨','🌸','💖','⭐','🌹','💝','🫧','🎀'];
+function spawnPt() {
+  const p = document.createElement('div');
+  p.className = 'pt';
+  p.textContent = PE[Math.floor(Math.random()*PE.length)];
+  const dur = 9 + Math.random()*13, del = Math.random()*5;
+  p.style.cssText = `left:${Math.random()*100}vw;font-size:${11+Math.random()*14}px;
+    animation-duration:${dur}s;animation-delay:${del}s`;
+  prt.appendChild(p);
+  setTimeout(() => p.remove(), (dur+del)*1000);
+}
+for (let i=0;i<20;i++) spawnPt();
+setInterval(spawnPt, 1600);
+
+// ════════════════════════════════
+// SCROLL REVEAL
+// ════════════════════════════════
+const rEls = document.querySelectorAll('.rv,.rvl,.rvr');
+const rObs = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (!en.isIntersecting) return;
+    const d = parseInt(en.target.dataset.d || 0);
+    setTimeout(() => en.target.classList.add('on'), d * 110);
+    rObs.unobserve(en.target);
+  });
+}, { threshold: 0.1 });
+rEls.forEach((el, i) => { el.dataset.d = i % 4; rObs.observe(el); });
+
+// ════════════════════════════════
+// POOL DRUNK METER
+// ════════════════════════════════
+const DS = [
+  { name:'😔 Sober &amp; Suffering',
+    desc:'We miss every single shot and apologise to each other about it. Repeatedly. It\'s genuinely painful to witness.',
+    track:'🤍🤍🤍🤍🤍🤍' },
+  { name:'🤔 One Beer In',
+    desc:'"We\'re warming up." The shots are still very much not landing.',
+    track:'🍺🤍🤍🤍🤍🤍' },
+  { name:'😏 Getting There',
+    desc:'An occasional accidental pot. We celebrate absolutely way too hard.',
+    track:'🍺🍺🤍🤍🤍🤍' },
+  { name:'😄 The Sweet Spot™',
+    desc:'Wait... are we actually decent?? This is statistically impossible.',
+    track:'🍺🍺🍺🤍🤍🤍' },
+  { name:'🎱 POOL SHARK MODE',
+    desc:'We are UNSTOPPABLE. Minnesota Fats is shaking. Triple kisses, perfect positional play, natural angles.',
+    track:'🍺🍺🍺🍺🤍🤍' },
+  { name:'🥴 Too Far Gone',
+    desc:'We can no longer see the table clearly. The cue appears to be at a 45° angle somehow.',
+    track:'🍺🍺🍺🍺🍺🤍' },
+  { name:'😵 Sir This Is A Wendy\'s',
+    desc:'I just potted the white ball four times. Clem is on the floor. The staff have been called. We are being asked to leave.',
+    track:'🍺🍺🍺🍺🍺🍺' },
+];
+const BCOLS = ['#F9CA24','#FFFFFF','#E74C3C','#3498DB','#8E44AD','#E67E22','#2ECC71'];
+const BPOS  = [{x:38,y:68},{x:80,y:108},{x:118,y:78},{x:52,y:152},{x:100,y:178},{x:140,y:150}];
+const ptable = document.getElementById('ptable');
+
+function updatePool(v) {
+  const s = DS[v];
+  document.getElementById('dlbl').textContent = `🍺 Drinks: ${v} / 6 🍺`;
+  document.getElementById('btrack').textContent = s.track;
+  document.getElementById('sname').innerHTML = 'Skill Level: ' + s.name;
+  document.getElementById('sdesc').textContent = s.desc;
+  ptable.querySelectorAll('.pball,.pcue').forEach(e => e.remove());
+  const cnt = Math.max(1, 6 - Math.floor(v * 0.7));
+  BPOS.slice(0, cnt).forEach((pos, i) => {
+    const b = document.createElement('div');
+    b.className = 'pball';
+    const x = v > 3 ? Math.random()*140+18 : pos.x;
+    const y = v > 3 ? Math.random()*198+18 : pos.y;
+    b.style.cssText = `background:${BCOLS[i]};left:${x}px;top:${y}px`;
+    ptable.appendChild(b);
+  });
+  const cue = document.createElement('div');
+  cue.className = 'pcue';
+  const ang = v > 3 ? Math.random()*60-30 : -10;
+  cue.style.cssText = `width:158px;left:78px;top:${200-v*10}px;transform:rotate(${ang}deg)`;
+  ptable.appendChild(cue);
+}
+document.getElementById('dslider').addEventListener('input', function(){ updatePool(+this.value); });
+updatePool(0);
+
+// ════════════════════════════════
+// CLASH ROYALE IMAGE FALLBACK
+// ════════════════════════════════
+function imgFail(wrapId, emoji) {
+  const w = document.getElementById(wrapId);
+  w.innerHTML = `<span style="font-size:72px">${emoji}</span>`;
+}
+
+// ════════════════════════════════
+// CLASH ROYALE BATTLE
+// ════════════════════════════════
+const BMSG = [
+  '🎳 BOWLER WINS! The boulder rolls right through — the Mother Witch\'s army crumbles to dust!',
+  '🧙‍♀️ MOTHER WITCH WINS! She transforms the entire Bowler push into adorable (yet deadly) Hog Witches!',
+  '💥 IT\'S A DRAW! They perfectly cancel each other out... just like we balance each other. 💗',
+  '🎳 BOWLER TAKES IT! Massive HP pool + devastating AOE — there\'s simply no stopping him!',
+  '🧙‍♀️ MOTHER WITCH EDGES IT! Her cauldron splash and superior mobility make the difference!',
+  '🎳 BOULDER CONNECTS! A perfectly placed 7-tile shot rolls through everything — UNSTOPPABLE!',
+  '🧙‍♀️ MOTHER WITCH with the CLUTCH! She curses the entire push and turns it against itself!',
+];
+
+function selectCR(which) {
+  document.getElementById('crd-bowler').style.boxShadow =
+    which==='bowler' ? '0 0 55px #FFD700,0 0 110px rgba(255,215,0,.4)' : '';
+  document.getElementById('crd-witch').style.boxShadow =
+    which==='witch'  ? '0 0 55px #C084FC,0 0 110px rgba(192,132,252,.4)' : '';
+}
+
+function doBattle() {
+  const bc = document.getElementById('crd-bowler');
+  const wc = document.getElementById('crd-witch');
+  const re = document.getElementById('bres');
+  re.classList.remove('show'); re.textContent = '';
+  let t = 0;
+  const si = setInterval(() => {
+    const d = t%2 ? 1 : -1;
+    bc.style.transform = `translateX(${d*10}px) scale(1.06)`;
+    wc.style.transform = `translateX(${-d*10}px) scale(1.06)`;
+    if (++t > 12) {
+      clearInterval(si);
+      bc.style.transform = wc.style.transform = '';
+      re.textContent = BMSG[Math.floor(Math.random()*BMSG.length)];
+      re.classList.add('show');
+      const r = re.getBoundingClientRect();
+      for (let i=0;i<10;i++)
+        spk(r.left+Math.random()*r.width, r.top+Math.random()*r.height);
+    }
+  }, 90);
+}
+
+// ════════════════════════════════
+// CUP PONG GAME
+// ════════════════════════════════
+const cv   = document.getElementById('pongcv');
+const ctx  = cv.getContext('2d');
+const CW=560, CH=380, CX=CW/2;
+const BY=CH-44, BR=12, CR=22, CG=55;
+
+let G;
+function makeCups(){
+  return [
+    {x:CX-CG,  y:62,  sunk:false},
+    {x:CX,     y:62,  sunk:false},
+    {x:CX+CG,  y:62,  sunk:false},
+    {x:CX-CG/2,y:116, sunk:false},
+    {x:CX+CG/2,y:116, sunk:false},
+    {x:CX,     y:170, sunk:false},
+  ];
+}
+function initG(){
+  G={cups:makeCups(),ball:{x:CX,y:BY},shooting:false,t:0,
+     tx:CX,ty:CH/2,sunk:0,shots:0,drunk:false,won:false,
+     aim:{x:CX,y:CH/2},hov:false};
+}
+function resetPong(){
+  initG();
+  document.getElementById('hsunk').textContent=
+  document.getElementById('hshots').textContent='0';
+  document.getElementById('hstatus').textContent='😐';
+  document.getElementById('phint').textContent='Click anywhere on the table to aim and shoot!';
+  draw();
+}
+initG();
+
+function getXY(e){
+  const r=cv.getBoundingClientRect();
+  const sx=CW/r.width, sy=CH/r.height;
+  if(e.touches) return{x:(e.touches[0].clientX-r.left)*sx,y:(e.touches[0].clientY-r.top)*sy};
+  return{x:(e.clientX-r.left)*sx,y:(e.clientY-r.top)*sy};
+}
+
+cv.addEventListener('mousemove', e=>{
+  const p=getXY(e); G.aim=p; G.hov=true;
+  if(!G.shooting&&!G.won) draw();
+});
+cv.addEventListener('mouseleave', ()=>{ G.hov=false; draw(); });
+cv.addEventListener('click', e=>{
+  if(G.shooting||G.won) return;
+  const p=getXY(e);
+  G.tx=p.x; G.ty=Math.min(p.y, CH-56);
+  shoot();
+});
+cv.addEventListener('touchstart', e=>{
+  e.preventDefault();
+  if(G.shooting||G.won) return;
+  const p=getXY(e);
+  G.tx=p.x; G.ty=Math.min(p.y, CH-56);
+  shoot();
+},{passive:false});
+
+function shoot(){
+  G.shooting=true; G.t=0;
+  G.ball={x:CX,y:BY};
+  G.shots++;
+  document.getElementById('hshots').textContent=G.shots;
+  requestAnimationFrame(aBall);
+}
+
+function aBall(){
+  G.t += 0.024;
+  const t=G.t;
+  let bx = CX+(G.tx-CX)*t;
+  if(G.drunk) bx += Math.sin(t*18)*24;
+  bx = Math.max(BR, Math.min(CW-BR, bx));
+  const arcH = 100;
+  const by = BY+(G.ty-BY)*t - arcH*Math.sin(Math.PI*t);
+  G.ball.x=bx; G.ball.y=by;
+
+  if(t>0.3){
+    for(const c of G.cups){
+      if(!c.sunk){
+        const d=Math.hypot(bx-c.x, by-c.y);
+        if(d < CR+BR-2){
+          c.sunk=true; G.sunk++;
+          document.getElementById('hsunk').textContent=G.sunk;
+          ping(G.drunk?310:490,0.18);
+          if(G.sunk>=3){
+            G.drunk=true;
+            document.getElementById('hstatus').textContent='🥴';
+            document.getElementById('phint').textContent='🥴 Drunk mode! The ball has had a few...';
+          }
+          if(G.sunk>=6){
+            G.won=true;
+            document.getElementById('hstatus').textContent='🏆';
+            document.getElementById('phint').textContent='🏆 WINNER! You cleared the table! Drinks are on you!';
+            winSound();
+          }
+          G.shooting=false; G.ball={x:CX,y:BY}; draw(); return;
+        }
+      }
+    }
+  }
+
+  if(t>=1){
+    ping(190,0.06);
+    G.shooting=false; G.ball={x:CX,y:BY}; draw(); return;
+  }
+  draw();
+  if(G.shooting) requestAnimationFrame(aBall);
+}
+
+// Audio
+let aCtx=null;
+function getAC(){ if(!aCtx) aCtx=new(window.AudioContext||window.webkitAudioContext)(); return aCtx; }
+function ping(f,dur){
+  try{
+    const ac=getAC(), o=ac.createOscillator(), g=ac.createGain();
+    o.connect(g); g.connect(ac.destination);
+    o.type='sine'; o.frequency.setValueAtTime(f,ac.currentTime);
+    o.frequency.exponentialRampToValueAtTime(f*.4,ac.currentTime+dur);
+    g.gain.setValueAtTime(.25,ac.currentTime);
+    g.gain.exponentialRampToValueAtTime(.001,ac.currentTime+dur);
+    o.start(); o.stop(ac.currentTime+dur);
+  }catch(e){}
+}
+function winSound(){ [523,659,784,1047,1319].forEach((f,i)=>setTimeout(()=>ping(f,.4),i*160)); }
+
+// Ripple tick
+let rpT=0;
+setInterval(()=>{ rpT=(rpT+2)%60; if(!G.shooting) draw(); },50);
+
+// ── DRAW ──
+function rrect(x,y,w,h,r){ ctx.beginPath(); ctx.roundRect(x,y,w,h,r); }
+
+function draw(){
+  ctx.clearRect(0,0,CW,CH);
+
+  // Table
+  const tg=ctx.createLinearGradient(0,0,0,CH);
+  tg.addColorStop(0,'#1c7840'); tg.addColorStop(1,'#0d4020');
+  ctx.fillStyle=tg; rrect(0,0,CW,CH,18); ctx.fill();
+
+  // Lines
+  ctx.strokeStyle='rgba(255,255,255,.1)'; ctx.lineWidth=1.5;
+  ctx.beginPath(); ctx.moveTo(0,CH/2); ctx.lineTo(CW,CH/2); ctx.stroke();
+  ctx.beginPath(); ctx.arc(CX,CH/2,44,0,Math.PI*2); ctx.stroke();
+  ctx.fillStyle='rgba(255,255,255,.12)'; ctx.beginPath(); ctx.arc(CX,CH/2,4,0,Math.PI*2); ctx.fill();
+
+  // Cups
+  for(const c of G.cups){
+    if(!c.sunk){
+      // shadow
+      ctx.fillStyle='rgba(0,0,0,.22)';
+      ctx.beginPath(); ctx.ellipse(c.x+3,c.y+6,CR,CR*.35,0,0,Math.PI*2); ctx.fill();
+      // body
+      const cg=ctx.createRadialGradient(c.x-7,c.y-7,2,c.x,c.y,CR);
+      cg.addColorStop(0,'#FF8DC7'); cg.addColorStop(.6,'#FF6B9D'); cg.addColorStop(1,'#C2006F');
+      ctx.fillStyle=cg; ctx.beginPath(); ctx.arc(c.x,c.y,CR,0,Math.PI*2); ctx.fill();
+      // rim highlight
+      ctx.strokeStyle='rgba(255,255,255,.5)'; ctx.lineWidth=2;
+      ctx.beginPath(); ctx.arc(c.x,c.y,CR,Math.PI*1.15,Math.PI*1.85); ctx.stroke();
+      // liquid sheen
+      ctx.fillStyle='rgba(255,255,255,.17)';
+      ctx.beginPath(); ctx.ellipse(c.x,c.y-7,CR*.58,CR*.2,0,0,Math.PI*2); ctx.fill();
+    } else {
+      const rp=(rpT+3)%60, a=Math.max(0,1-rp/60);
+      ctx.strokeStyle=`rgba(255,107,157,${a*.6})`; ctx.lineWidth=2;
+      ctx.beginPath(); ctx.arc(c.x,c.y,CR+rp*.6,0,Math.PI*2); ctx.stroke();
+      ctx.globalAlpha=a;
+      ctx.font='18px serif'; ctx.textAlign='center'; ctx.textBaseline='middle';
+      ctx.fillStyle='white'; ctx.fillText('💧',c.x,c.y);
+      ctx.globalAlpha=1;
+    }
+  }
+
+  // Aim guide
+  if(!G.shooting&&!G.won&&G.hov){
+    ctx.setLineDash([6,9]);
+    ctx.strokeStyle='rgba(255,255,255,.22)'; ctx.lineWidth=1.5;
+    ctx.beginPath(); ctx.moveTo(CX,BY); ctx.lineTo(G.aim.x,G.aim.y); ctx.stroke();
+    ctx.setLineDash([]);
+  }
+
+  // Ball
+  {
+    const bx=G.ball.x, by=G.ball.y;
+    // floor shadow (fades as ball rises)
+    const sha=Math.max(0,(by/BY)*0.28);
+    ctx.fillStyle=`rgba(0,0,0,${sha})`;
+    ctx.beginPath(); ctx.ellipse(bx+2,BY+5,BR*.9,BR*.3,0,0,Math.PI*2); ctx.fill();
+    // ball
+    const bg=ctx.createRadialGradient(bx-4,by-4,1,bx,by,BR);
+    if(G.drunk){ bg.addColorStop(0,'#FFD700'); bg.addColorStop(1,'#FF8800'); }
+    else        { bg.addColorStop(0,'#FFFFFF'); bg.addColorStop(1,'#CCCCCC'); }
+    ctx.fillStyle=bg; ctx.beginPath(); ctx.arc(bx,by,BR,0,Math.PI*2); ctx.fill();
+    // shine
+    ctx.fillStyle='rgba(255,255,255,.35)';
+    ctx.beginPath(); ctx.ellipse(bx-3,by-4,BR*.38,BR*.22,-.4,0,Math.PI*2); ctx.fill();
+  }
+
+  // Launcher strip
+  ctx.fillStyle='rgba(255,255,255,.05)';
+  ctx.fillRect(0,CH-52,CW,52);
+  ctx.fillStyle='rgba(255,255,255,.22)';
+  ctx.font='11px Nunito,sans-serif'; ctx.textAlign='center'; ctx.textBaseline='middle';
+  ctx.fillText('YOUR SIDE  —  CLICK TO SHOOT',CX,CH-22);
+
+  // Win overlay
+  if(G.won){
+    ctx.fillStyle='rgba(0,0,0,.68)'; rrect(0,0,CW,CH,18); ctx.fill();
+    ctx.fillStyle='#FFD700';
+    ctx.font='bold 42px "Playfair Display",serif';
+    ctx.textAlign='center'; ctx.textBaseline='middle';
+    ctx.fillText('🏆  YOU WIN!  🏆',CX,CH/2-24);
+    ctx.fillStyle='rgba(255,255,255,.9)';
+    ctx.font='19px Nunito,sans-serif';
+    ctx.fillText('Drinks on you tonight 🎉',CX,CH/2+22);
+  }
+}
+draw();
+
+// ════════════════════════════════
+// PARALLAX GLOW
+// ════════════════════════════════
+window.addEventListener('scroll', ()=>{
+  const g=document.querySelector('.hglow');
+  if(g) g.style.transform=`translate(-50%,calc(-50% + ${scrollY*.25}px))`;
+});
+</script>
+</body>
+</html>
